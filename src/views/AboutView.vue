@@ -1,5 +1,24 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>About Puzzle 15</h1>
+    <p class="description"> The 15 puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square and many others) is a sliding puzzle having 15 square tiles numbered 1–15 in a frame that is 4 tiles high and 4 tiles wide, leaving one unoccupied tile position. 
+      Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order. </p>
+    <img class="image" src="../assets/puzzle15.jpg">
   </div>
 </template>
+
+<style scoped>
+
+.description {
+  width: 800px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image {
+  width: 500px;
+  height: 500px;
+}
+
+</style>

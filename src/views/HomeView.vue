@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <GameBoard :board="$store.state.board.cells" />
   </div>
+  <button class="newgamebutton" @click="startNewGame()">New Game</button>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import GameBoard from '../components/GameBoard.vue'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  components: { GameBoard },
+
+  methods: {
+    startNewGame() {
+      this.$store.dispatch('RESET');
+    }
   }
 }
 </script>
+
+<style>
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newgamebutton {
+  position: relative;
+  top: 50px;
+}
+
+</style>
