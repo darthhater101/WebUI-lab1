@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-# lab1
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# WebUI-lab1
->>>>>>> 22d08bfda9bb43237b43492919d45462f903d985
+# Лабораторна робота №1 "Розробка клієнтської частини Web-додатка"
+## Виконав: Фещенко Іван Олександрович, КВ-11мп
+### Посилання на звіт: [link-to-doc](https://docs.google.com/document/d/1j-qsAS21EelaLdvtDAz5d6JomcnaUahD7UxCwjsa494/edit?usp=sharing)
