@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # lab1
 
 ## Project setup
@@ -22,3 +23,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# WebUI-lab1
+>>>>>>> 22d08bfda9bb43237b43492919d45462f903d985
