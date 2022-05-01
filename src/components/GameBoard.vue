@@ -1,6 +1,7 @@
 <template>
   <div class="board">
-    <div 
+    <div
+    class="item"
     v-for="(item, index) in board" 
     :key="item.value"
     @click="move(index)">

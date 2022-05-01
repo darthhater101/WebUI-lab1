@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "UserProfle",
+    name: "LoginView",
     data() {
         return {
             user: {

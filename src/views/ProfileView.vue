@@ -20,14 +20,14 @@
     <p>
       Score {{this.user.score}}
     </p>
-    <button type="button" v-on:click="update()">Update</button>
-    <button type="button" v-on:click="logout()">Logout</button>
+    <button type="button" id="update" v-on:click="update()">Update</button>
+    <button type="button" id="logout" v-on:click="logout()">Logout</button>
   </div>
 </template>
 
 <script>
 export default {
-    name: "UserProfle",
+    name: "ProfileView",
     data() {
         return {
             user: {
