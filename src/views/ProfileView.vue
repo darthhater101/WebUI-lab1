@@ -46,6 +46,7 @@ export default {
         update() {
             if(this.user.username !== "" && this.user.password !== "") {
                 this.$store.dispatch("UPDATE_USER", this.user);
+                alert("Credentials were updated");
             } else {
                 alert("Please enter username and password");
             }
