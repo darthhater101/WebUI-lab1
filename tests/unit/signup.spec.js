@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
-import LoginView from '@/views/LogInView.vue'
+import SignUpView from '@/views/SignUpView.vue'
 
-describe('LoginView.vue testing', () => {
+describe('SignUpView.vue testing', () => {
 
     const $router = {
         push: jest.fn()
@@ -10,7 +10,7 @@ describe('LoginView.vue testing', () => {
         dispatch: jest.fn()
     }
 
-    const wrapper = mount(LoginView, {
+    const wrapper = mount(SignUpView, {
         global: {
             mocks: {
                 $router,
@@ -21,41 +21,28 @@ describe('LoginView.vue testing', () => {
 
     window.alert = jest.fn();
 
-    it('login with empty fields', async () => {
-
-        expect(wrapper.find('input[name="username"]').text()).toBe("");
-        expect(wrapper.find('input[name="password"]').text()).toBe("");
-        await wrapper.find('button').trigger('click');
-        expect($router.push).toBeCalledTimes(0);
-        expect($store.dispatch).toBeCalledTimes(0);
-        expect(window.alert).toBeCalledWith('Please enter username and password');
-    });
-
-    it('login with empty username', async () => {
-
+    it('signup with empty username', async () => {
         await wrapper.find('input[name="password"]').setValue("password");
         await wrapper.find('button').trigger('click');
-        expect($router.push).toBeCalledTimes(0);
         expect($store.dispatch).toBeCalledTimes(0);
+        expect($router.push).toBeCalledTimes(0);
         expect(window.alert).toBeCalledWith('Please enter username and password');
     });
 
-    it('login with empty password', async () => {
-
+    it('signup with empty password', async () => {
         await wrapper.find('input[name="username"]').setValue("username");
         await wrapper.find('input[name="password"]').setValue("");
         await wrapper.find('button').trigger('click');
-        expect($router.push).toBeCalledTimes(0);
         expect($store.dispatch).toBeCalledTimes(0);
+        expect($router.push).toBeCalledTimes(0);
         expect(window.alert).toBeCalledWith('Please enter username and password');
     });
 
-    it('login with filled fields', async () => {
-
+    it('signup with filled fields', async () => {
         await wrapper.find('input[name="username"]').setValue("username");
         await wrapper.find('input[name="password"]').setValue("password");
         await wrapper.find('button').trigger('click');
-        expect($router.push).toBeCalledWith("/profile")
-        expect($store.dispatch).toBeCalledWith("LOGIN_USER", { username: "username", password: "password" })
+        expect($store.dispatch).toBeCalledWith("ADD_USER", { username: "username", password: "password", score: 0 })
+        expect($router.push).toBeCalledWith("/login");
     });
 })

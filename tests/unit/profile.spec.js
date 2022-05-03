@@ -27,22 +27,15 @@ describe('ProfileView.vue testing', () => {
 
     window.alert = jest.fn();
 
-    it('update with empty fields', async () => {
-        await wrapper.find('input[name="username"]').setValue("");
-        await wrapper.find('input[name="password"]').setValue("");
-        await wrapper.find('button').trigger('click');
-        expect($store.dispatch).toBeCalledTimes(0);
-        expect(window.alert).toBeCalledWith('Please enter username and password');
-    });
-
     it('update with empty username', async () => {
+        await wrapper.find('input[name="username"]').setValue("");
         await wrapper.find('input[name="password"]').setValue("password");
         await wrapper.find('button').trigger('click');
         expect($store.dispatch).toBeCalledTimes(0);
         expect(window.alert).toBeCalledWith('Please enter username and password');
     });
 
-    it('login with empty password', async () => {
+    it('update with empty password', async () => {
         await wrapper.find('input[name="username"]').setValue("username");
         await wrapper.find('input[name="password"]').setValue("");
         await wrapper.find('button').trigger('click');
@@ -55,6 +48,7 @@ describe('ProfileView.vue testing', () => {
         await wrapper.find('input[name="password"]').setValue("password");
         await wrapper.find('button').trigger('click');
         expect($store.dispatch).toBeCalledWith("UPDATE_USER", { username: "username", password: "password" })
+        expect(window.alert).toBeCalledWith('Credentials were updated');
     });
 
     it('logout', async () => {

@@ -20,6 +20,10 @@ describe('HomeView.vue testing', () => {
         }
     });
 
+    it('check color', async () => {
+        wrapper.find('.cell');
+    });
+
     it('checks reset button', async () => {
         await wrapper.find('button').trigger('click');
         expect($store.dispatch).toBeCalledWith("RESET");

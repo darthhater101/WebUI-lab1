@@ -4,7 +4,7 @@ import AboutView from '@/views/AboutView.vue';
 describe('AboutView.vue testing', () => {
     const wrapper = mount(AboutView);
 
-    it('checks if image exist', () => {
+    it('checks if image exists', () => {
         const images = wrapper.findAll('img');
         expect(images.length).toBe(1);
     });
